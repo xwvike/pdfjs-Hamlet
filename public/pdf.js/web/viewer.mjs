@@ -14269,7 +14269,7 @@ function webViewerReportTelemetry({
 
 
 const pdfjsVersion = "4.3.0";
-const pdfjsBuild = "7dc3a21";
+const pdfjsBuild = "bb0fec4";
 const AppConstants = {
   LinkTarget: LinkTarget,
   RenderingStates: RenderingStates,
