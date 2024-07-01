@@ -1,0 +1,31 @@
+{
+  "name": "pdfjs-hamlet",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "cd pdf.js-4.3.136 && gulp generic && cd .. && vite",
+    "build": "cd pdf.js-4.3.136 && gulp generic && cd .. && vite build",
+    "preview": "vite preview",
+    "prettier": "prettier --write ."
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "printWidth": 100,
+    "tabWidth": 2,
+    "useTabs": false,
+    "endOfLine": "lf"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.0.2",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "prettier": "3.3.2",
+    "rollup-plugin-copy": "^3.5.0",
+    "svelte": "^4.2.12",
+    "tailwindcss": "^3.4.4",
+    "vite": "^5.2.0"
+  }
+}
