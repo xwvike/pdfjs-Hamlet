@@ -1,9 +1,13 @@
 import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import copy from 'rollup-plugin-copy'
+import {deleteSync} from 'del'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server:{
+    host:true
+  },
   plugins: [
     svelte(),
     copy({

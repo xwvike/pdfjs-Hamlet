@@ -595,7 +595,7 @@ const defaultOptions = {
     kind: OptionKind.VIEWER + OptionKind.PREFERENCE
   },
   debuggerSrc: {
-    value: "./debugger.mjs",
+    value: "../web/debugger.mjs",
     kind: OptionKind.VIEWER
   },
   defaultZoomDelay: {
@@ -663,7 +663,7 @@ const defaultOptions = {
     kind: OptionKind.VIEWER + OptionKind.PREFERENCE
   },
   imageResourcesPath: {
-    value: "./images/",
+    value: "./pdf.js/web/images/",
     kind: OptionKind.VIEWER
   },
   maxCanvasPixels: {
@@ -715,7 +715,7 @@ const defaultOptions = {
     kind: OptionKind.API
   },
   cMapUrl: {
-    value: "../web/cmaps/",
+    value: "../pdf.js/web/cmaps/",
     kind: OptionKind.API
   },
   disableAutoFetch: {
@@ -763,7 +763,7 @@ const defaultOptions = {
     kind: OptionKind.API
   },
   standardFontDataUrl: {
-    value: "../web/standard_fonts/",
+    value: "../pdf.js/web/standard_fonts/",
     kind: OptionKind.API
   },
   verbosity: {
@@ -775,17 +775,17 @@ const defaultOptions = {
     kind: OptionKind.WORKER
   },
   workerSrc: {
-    value: "../pdf.js/build/pdf.worker.mjs",
+    value: "/pdf.js/build/pdf.worker.mjs",
     kind: OptionKind.WORKER
   }
 };
 {
   defaultOptions.defaultUrl = {
-    value: "../pdf.js/web/compressed.tracemonkey-pldi-09.pdf",
+    value: "/pdf.js/web/compressed.tracemonkey-pldi-09.pdf",
     kind: OptionKind.VIEWER
   };
   defaultOptions.sandboxBundleSrc = {
-    value: "../build/pdf.sandbox.mjs",
+    value: "/pdf.js/build/pdf.sandbox.mjs",
     kind: OptionKind.VIEWER
   };
   defaultOptions.viewerCssTheme = {
@@ -13507,12 +13507,13 @@ initCom(PDFViewerApplication);
     }
     try {
       const viewerOrigin = new URL(window.location.href).origin || "null";
-      console.log(viewerOrigin);
       if ([...HOSTED_VIEWER_ORIGINS, ...(window?.HOSTED_VIEWER_ORIGINS_EXTENSION || [])].includes(viewerOrigin)) {
         return;
       }
       const fileOrigin = new URL(file, window.location.href).origin;
-      if (fileOrigin !== viewerOrigin) {}
+      if (fileOrigin !== viewerOrigin && !window?.allowAllOrigins) {
+        throw new Error("file origin does not match viewer's");
+      }
     } catch (ex) {
       PDFViewerApplication._documentError("pdfjs-loading-error", {
         message: ex.message
@@ -14269,7 +14270,7 @@ function webViewerReportTelemetry({
 
 
 const pdfjsVersion = "4.3.0";
-const pdfjsBuild = "bb0fec4";
+const pdfjsBuild = "5cced85";
 const AppConstants = {
   LinkTarget: LinkTarget,
   RenderingStates: RenderingStates,
@@ -14283,7 +14284,30 @@ function getViewerConfiguration() {
   return {
     appContainer: document.body,
     mainContainer: document.getElementById("viewerContainer"),
-    viewerContainer: document.getElementById("viewer")
+    viewerContainer: document.getElementById("viewer"),
+    sidebar: {
+      outerContainer: document.getElementById("outerContainer"),
+      sidebarContainer: document.getElementById("sidebarContainer"),
+      toggleButton: document.getElementById("sidebarToggle"),
+      resizer: document.getElementById("sidebarResizer"),
+      thumbnailButton: document.getElementById("viewThumbnail"),
+      outlineButton: document.getElementById("viewOutline"),
+      attachmentsButton: document.getElementById("viewAttachments"),
+      layersButton: document.getElementById("viewLayers"),
+      thumbnailView: document.getElementById("thumbnailView"),
+      outlineView: document.getElementById("outlineView"),
+      attachmentsView: document.getElementById("attachmentsView"),
+      layersView: document.getElementById("layersView"),
+      currentOutlineItemButton: document.getElementById("currentOutlineItem")
+    },
+    passwordOverlay: {
+      dialog: document.getElementById("passwordDialog"),
+      label: document.getElementById("passwordText"),
+      input: document.getElementById("password"),
+      submitButton: document.getElementById("passwordSubmit"),
+      cancelButton: document.getElementById("passwordCancel")
+    },
+    printContainer: document.getElementById("printContainer")
   };
 }
 function webViewerLoad() {

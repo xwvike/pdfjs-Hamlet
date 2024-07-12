@@ -113,7 +113,7 @@ const defaultOptions = {
   },
   debuggerSrc: {
     /** @type {string} */
-    value: "./debugger.mjs",
+    value: "../web/debugger.mjs",
     kind: OptionKind.VIEWER,
   },
   defaultZoomDelay: {
@@ -210,7 +210,7 @@ const defaultOptions = {
     value:
       typeof PDFJSDev !== "undefined" && PDFJSDev.test("MOZCENTRAL")
         ? "resource://pdf.js/web/images/"
-        : "./images/",
+        : "./pdf.js/web/images/",
     kind: OptionKind.VIEWER,
   },
   maxCanvasPixels: {
@@ -282,7 +282,7 @@ const defaultOptions = {
         ? "../external/bcmaps/"
         : PDFJSDev.test("MOZCENTRAL")
           ? "resource://pdf.js/web/cmaps/"
-          : "../web/cmaps/",
+          : "../pdf.js/web/cmaps/",
     kind: OptionKind.API,
   },
   disableAutoFetch: {
@@ -348,7 +348,7 @@ const defaultOptions = {
         ? "../external/standard_fonts/"
         : PDFJSDev.test("MOZCENTRAL")
           ? "resource://pdf.js/web/standard_fonts/"
-          : "../web/standard_fonts/",
+          : "../pdf.js/web/standard_fonts/",
     kind: OptionKind.API,
   },
   verbosity: {
@@ -370,7 +370,7 @@ const defaultOptions = {
         ? "../src/pdf.worker.js"
         : PDFJSDev.test("MOZCENTRAL")
           ? "resource://pdf.js/build/pdf.worker.mjs"
-          : "../pdf.js/build/pdf.worker.mjs",
+          : "/pdf.js/build/pdf.worker.mjs",
     kind: OptionKind.WORKER,
   },
 };
@@ -380,7 +380,7 @@ if (typeof PDFJSDev === "undefined" || !PDFJSDev.test("MOZCENTRAL")) {
     value:
       typeof PDFJSDev !== "undefined" && PDFJSDev.test("CHROME")
         ? ""
-        : "../pdf.js/web/compressed.tracemonkey-pldi-09.pdf",
+        : "/pdf.js/web/compressed.tracemonkey-pldi-09.pdf",
     kind: OptionKind.VIEWER,
   };
   defaultOptions.sandboxBundleSrc = {
@@ -388,7 +388,7 @@ if (typeof PDFJSDev === "undefined" || !PDFJSDev.test("MOZCENTRAL")) {
     value:
       typeof PDFJSDev === "undefined"
         ? "../build/dev-sandbox/pdf.sandbox.mjs"
-        : "../build/pdf.sandbox.mjs",
+        : "/pdf.js/build/pdf.sandbox.mjs",
     kind: OptionKind.VIEWER,
   };
   defaultOptions.viewerCssTheme = {

@@ -3,5 +3,15 @@
   height: 100vh;
 }
 @tailwind base;
+@layer base {
+  *,
+  ::before,
+  ::after {
+    box-sizing: content-box;
+  }
+}
 @tailwind components;
 @tailwind utilities;
+body {
+  @apply bg-gray-100 dark:bg-gray-800;
+}

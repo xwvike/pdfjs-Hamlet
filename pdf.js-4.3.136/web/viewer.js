@@ -71,7 +71,7 @@ function getViewerConfiguration() {
     //   download: document.getElementById("download"),
     // },
     // secondaryToolbar: {
-    //   toolbar: document.getElementById("secondaryToolbar"),
+      // toolbar: document.getElementById("secondaryToolbar"),
     //   toggleButton: document.getElementById("secondaryToolbarToggle"),
     //   presentationModeButton: document.getElementById("presentationMode"),
     //   openFileButton:
@@ -96,25 +96,25 @@ function getViewerConfiguration() {
     //   spreadEvenButton: document.getElementById("spreadEven"),
     //   documentPropertiesButton: document.getElementById("documentProperties"),
     // },
-    // sidebar: {
-    //   // Divs (and sidebar button)
-    //   outerContainer: document.getElementById("outerContainer"),
-    //   sidebarContainer: document.getElementById("sidebarContainer"),
-    //   toggleButton: document.getElementById("sidebarToggle"),
-    //   resizer: document.getElementById("sidebarResizer"),
-    //   // Buttons
-    //   thumbnailButton: document.getElementById("viewThumbnail"),
-    //   outlineButton: document.getElementById("viewOutline"),
-    //   attachmentsButton: document.getElementById("viewAttachments"),
-    //   layersButton: document.getElementById("viewLayers"),
-    //   // Views
-    //   thumbnailView: document.getElementById("thumbnailView"),
-    //   outlineView: document.getElementById("outlineView"),
-    //   attachmentsView: document.getElementById("attachmentsView"),
-    //   layersView: document.getElementById("layersView"),
-    //   // View-specific options
-    //   currentOutlineItemButton: document.getElementById("currentOutlineItem"),
-    // },
+    sidebar: {
+      // Divs (and sidebar button)
+      outerContainer: document.getElementById("outerContainer"),
+      sidebarContainer: document.getElementById("sidebarContainer"),
+      toggleButton: document.getElementById("sidebarToggle"),
+      resizer: document.getElementById("sidebarResizer"),
+      // Buttons
+      thumbnailButton: document.getElementById("viewThumbnail"),
+      outlineButton: document.getElementById("viewOutline"),
+      attachmentsButton: document.getElementById("viewAttachments"),
+      layersButton: document.getElementById("viewLayers"),
+      // Views
+      thumbnailView: document.getElementById("thumbnailView"),
+      outlineView: document.getElementById("outlineView"),
+      attachmentsView: document.getElementById("attachmentsView"),
+      layersView: document.getElementById("layersView"),
+      // View-specific options
+      currentOutlineItemButton: document.getElementById("currentOutlineItem"),
+    },
     // findBar: {
     //   bar: document.getElementById("findbar"),
     //   toggleButton: document.getElementById("viewFind"),
@@ -128,13 +128,13 @@ function getViewerConfiguration() {
     //   findPreviousButton: document.getElementById("findPrevious"),
     //   findNextButton: document.getElementById("findNext"),
     // },
-    // passwordOverlay: {
-    //   dialog: document.getElementById("passwordDialog"),
-    //   label: document.getElementById("passwordText"),
-    //   input: document.getElementById("password"),
-    //   submitButton: document.getElementById("passwordSubmit"),
-    //   cancelButton: document.getElementById("passwordCancel"),
-    // },
+    passwordOverlay: {
+      dialog: document.getElementById("passwordDialog"),
+      label: document.getElementById("passwordText"),
+      input: document.getElementById("password"),
+      submitButton: document.getElementById("passwordSubmit"),
+      cancelButton: document.getElementById("passwordCancel"),
+    },
     // documentProperties: {
     //   dialog: document.getElementById("documentPropertiesDialog"),
     //   closeButton: document.getElementById("documentPropertiesClose"),
@@ -175,7 +175,7 @@ function getViewerConfiguration() {
     //   ),
     //   editorHighlightShowAll: document.getElementById("editorHighlightShowAll"),
     // },
-    // printContainer: document.getElementById("printContainer"),
+    printContainer: document.getElementById("printContainer"),
   };
 }
 
