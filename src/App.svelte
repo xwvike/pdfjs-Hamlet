@@ -4,7 +4,7 @@
   import LoadingBar from './lib/LoadingBar.svelte'
   import PasswordDialog from './lib/PasswordDialog.svelte'
   import { defaultOptions } from './app_options.js'
-  import { scalechanging, pagechanging } from './event.js'
+  import { scalechanging, pagechanging, documentloaded } from './event.js'
   import PrintServiceDialog from './lib/PrintServiceDialog.svelte'
   import SidebarContent from './lib/SidebarContent.svelte'
 
@@ -15,6 +15,9 @@
     })
     window.PDFViewerApplication.eventBus.on('pagechanging', (e) => {
       pagechanging.next(e)
+    })
+    window.PDFViewerApplication.eventBus.on('documentloaded', (e) => {
+      documentloaded.next(e)
     })
   })
 </script>

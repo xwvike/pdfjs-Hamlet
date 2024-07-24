@@ -1,7 +1,4 @@
-<script>
-</script>
-
-<div id="sidebarContainer" class="z-0 border-0 shadow bg-white" style="inset-block-start: 3rem">
+<div id="sidebarContainer" class="z-0 border-0 shadow-xl bg-white" style="inset-block-start: 3rem">
   <div id="toolbarSidebar" class="shadow-none h-10 flex items-center justify-between">
     <div id="toolbarSidebarLeft" class=" pl-2">
       <div id="sidebarViewButtons" class="splitToolbarButton toggled" role="radiogroup">

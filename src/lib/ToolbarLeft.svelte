@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte'
-  import { pagechanging } from '../event.js'
+  import { pagechanging, documentloaded } from '../event.js'
 
   let page = 1
   let pagesCount = 1
@@ -11,6 +11,13 @@
         page = e.pageNumber
         pageText = e.pageNumber
         pagesCount = PDFViewerApplication.pagesCount
+      },
+    })
+    documentloaded.subscribe({
+      next: (e) => {
+        page = e.source.page
+        pagesCount = e.source.pagesCount
+        pageText = e.source.page
       },
     })
   })
@@ -39,14 +46,14 @@
     >
       <title data-l10n-id="pdfjs-toggle-sidebar-button-label">Toggle Sidebar</title>
       <path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 6l16 0" /><path
-      d="M4 12l16 0"
-    /><path d="M4 18l16 0" /></svg
+        d="M4 12l16 0"
+      /><path d="M4 18l16 0" /></svg
     >
   </div>
   <div class="relative mx-2 w-10 rounded-md">
     <input
       type="text"
-      class="block box-border w-full rounded-md border-0 py-1.5 text-gray-900 dark:bg-gray-500 dark:text-gray-50 text-center ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:focus:ring-indigo-50 sm:text-sm sm:leading-6"
+      class="max-sm:px-0 block box-border w-full rounded-md border-0 py-1.5 text-gray-900 dark:bg-gray-500 dark:text-gray-50 text-center ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:focus:ring-indigo-50 sm:text-sm sm:leading-6"
       bind:value={pageText}
       on:focus={(e) => e.target.select()}
       on:keydown={(e) => e.key === 'Enter' && setPage()}

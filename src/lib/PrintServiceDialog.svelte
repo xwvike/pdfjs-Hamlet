@@ -1,5 +1,5 @@
-<dialog id="printServiceDialog" class="w-9/12 sm:w-[24rem] p-4 border-0 rounded-lg shadow-lg ring-1 ring-gray-200">
-  <div class="w-full flex justify-between items-center">
+<dialog id="printServiceDialog" class="p-4 border-0 rounded-lg shadow-lg ring-1 ring-gray-200">
+  <div class="flex w-auto justify-center items-center flex-nowrap">
     <div class="flex items-center">
       <span
         class="text-sm flex-shrink-0 text-gray-900 mr-2 overflow-hidden max-sm:hidden"
