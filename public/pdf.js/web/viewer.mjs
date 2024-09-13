@@ -14270,7 +14270,7 @@ function webViewerReportTelemetry({
 
 
 const pdfjsVersion = "4.3.0";
-const pdfjsBuild = "5cced85";
+const pdfjsBuild = "8bd60d3";
 const AppConstants = {
   LinkTarget: LinkTarget,
   RenderingStates: RenderingStates,
@@ -14300,12 +14300,45 @@ function getViewerConfiguration() {
       layersView: document.getElementById("layersView"),
       currentOutlineItemButton: document.getElementById("currentOutlineItem")
     },
+    findBar: {
+      bar: document.getElementById("findbar"),
+      toggleButton: document.getElementById("viewFind"),
+      findField: document.getElementById("findInput"),
+      highlightAllCheckbox: document.getElementById("findHighlightAll"),
+      caseSensitiveCheckbox: document.getElementById("findMatchCase"),
+      matchDiacriticsCheckbox: document.getElementById("findMatchDiacritics"),
+      entireWordCheckbox: document.getElementById("findEntireWord"),
+      findMsg: document.getElementById("findMsg"),
+      findResultsCount: document.getElementById("findResultsCount"),
+      findPreviousButton: document.getElementById("findPrevious"),
+      findNextButton: document.getElementById("findNext")
+    },
     passwordOverlay: {
       dialog: document.getElementById("passwordDialog"),
       label: document.getElementById("passwordText"),
       input: document.getElementById("password"),
       submitButton: document.getElementById("passwordSubmit"),
       cancelButton: document.getElementById("passwordCancel")
+    },
+    documentProperties: {
+      dialog: document.getElementById("documentPropertiesDialog"),
+      closeButton: document.getElementById("documentPropertiesClose"),
+      fields: {
+        fileName: document.getElementById("fileNameField"),
+        fileSize: document.getElementById("fileSizeField"),
+        title: document.getElementById("titleField"),
+        author: document.getElementById("authorField"),
+        subject: document.getElementById("subjectField"),
+        keywords: document.getElementById("keywordsField"),
+        creationDate: document.getElementById("creationDateField"),
+        modificationDate: document.getElementById("modificationDateField"),
+        creator: document.getElementById("creatorField"),
+        producer: document.getElementById("producerField"),
+        version: document.getElementById("versionField"),
+        pageCount: document.getElementById("pageCountField"),
+        pageSize: document.getElementById("pageSizeField"),
+        linearized: document.getElementById("linearizedField")
+      }
     },
     printContainer: document.getElementById("printContainer")
   };

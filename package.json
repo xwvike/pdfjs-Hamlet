@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "generic": "cd pdf.js-4.3.136 && gulp generic && cd ..",
+    "copy-pdf": "copyfiles -u 1 './pdf.js-4.3.136/build/generic/*' './public/pdf.js/'",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
@@ -26,6 +27,7 @@
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
     "@tailwindcss/forms": "^0.5.7",
     "autoprefixer": "^10.4.19",
+    "copyfiles": "^2.4.1",
     "del": "^7.1.0",
     "postcss": "^8.4.38",
     "prettier": "3.3.2",

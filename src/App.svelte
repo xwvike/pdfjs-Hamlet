@@ -7,6 +7,8 @@
   import { scalechanging, pagechanging, documentloaded } from './event.js'
   import PrintServiceDialog from './lib/PrintServiceDialog.svelte'
   import SidebarContent from './lib/SidebarContent.svelte'
+  import DocumentProperties from './lib/DocumentProperties.svelte'
+  import FindBar from './lib/FindBar.svelte'
 
   onMount(async () => {
     await import('../public/pdf.js/web/viewer.mjs')
@@ -40,6 +42,8 @@
   </div>
   <PasswordDialog />
   <PrintServiceDialog />
-  <SidebarContent/>
+  <SidebarContent />
+  <DocumentProperties />
+  <FindBar />
 </div>
 <div id="printContainer"></div>

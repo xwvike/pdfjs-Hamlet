@@ -36,6 +36,10 @@
   const RotateCounterclockwise = () => {
     window.PDFViewerApplication.eventBus.dispatch('rotateccw')
   }
+  const Documentproperties = () => {
+    showToolsPanel = false
+    window.PDFViewerApplication.eventBus.dispatch('documentproperties')
+  }
 </script>
 
 <div class="relative inline-block text-left">
@@ -151,7 +155,18 @@
           Rotate Counterclockwise
         </div>
       </div>
-<!--      <div class="py-1" role="none"></div>-->
+      <div class="py-1" role="none">
+        <div
+          on:click={Documentproperties}
+          on:keydown={(e) => e.key === 'Enter' && Documentproperties()}
+          class="cursor-pointer block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:actext-gray-900"
+          role="menuitem"
+          tabindex="-1"
+          data-l10n-id="pdfjs-document-properties-button-label"
+        >
+          Document Properties…
+        </div>
+      </div>
     </div>
   {/if}
 </div>

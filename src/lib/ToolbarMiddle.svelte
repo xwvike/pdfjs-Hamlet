@@ -95,7 +95,7 @@
     </svg>
   </div>
   <div class="w-[1px] max-sm:w-0 max-sm:mx-0 h-6 mx-2 bg-gray-200"></div>
-  <div class="overflow-hidden max-sm:w-0">
+  <div class="max-sm:hidden">
     {#if scaleMode === 'auto'}
       <svg
         tabindex="0"
